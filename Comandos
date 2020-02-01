@@ -1,0 +1,41 @@
+Abrir android studio y su emulador, ir a la carpeta del proyecto y ejecutar
+$ react-native start --port 8084 --reset-cache
+$ react-native run-android --port 8084
+
+or
+
+$ npm start or react-native start
+$ react-native run-android
+
+Reload emulator
+apretar RR estando en la pantalla
+ctrl+m ver menu de desarrollo
+
+
+ERRORES LINUX - Soluctions
+
+/dev/kvm device: permission denied
+$ sudo apt install qemu-kvm
+$ sudo adduser <username> kvm
+$ sudo chown <username> /dev/kvm
+$ ls -al /dev/kvm
+
+system limit for number of file watchers reached watch react native
+$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+
+Degub
+Sobre el emulador lanzar Ctrl+M y darle a la opcion debug, se abre la pestaña y ver console log
+
+
+
+
+Componentes
+
+<view> </view> Es reemplazada por html, setcion, div, etc
+<text> <text> Remplaza a los parrafos
+Platform: nos sirve para customizar si es ios o android
+
+
+
+

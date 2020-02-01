@@ -1,0 +1,62 @@
+Listas 
+flatList - lsitas sencillas
+
+sectionList - lsitas complejas
+
+install redux
+npm install redux react-redux --save
+
+local storage en react native
+$ npm install @react-native-community/async-storage --save
+$ react-native link @react-native-community/async-storage
+
+para usar como una iframe dentro de la app
+$ npm i react-native-webview
+$ yarn add react-native-webview
+$ react-native link react-native-webview
+
+pasar la app al telefono (apagar emulador), para debugger sacuri el telefono para que salgan las opcines de desarrollo
+$ react-native run-android
+
+
+
+firmar APK
+https://facebook.github.io/react-native/docs/signed-apk-android
+
+1 on Windowns - generar clave
+"C:\Program Files\Java\jdk1.8.0_231\bin\keytool.exe" -genkeypair -v -keystore platzivideo-jcamacaro.keystore -alias platzivideo-jcamacaro -keyalg RSA -keysize 2048 -validity 10000
+
+2 luego de haber generado la clave moverla hacia android/app
+
+3 configurar el archivo android/gradle.properties
+hay que agregar esto con los nombres que le puse al crear la claveMYAPP_UPLOAD_STORE_FILE=my-upload-key.keystore
+MYAPP_UPLOAD_KEY_ALIAS=my-key-alias
+MYAPP_UPLOAD_STORE_PASSWORD=*****
+MYAPP_UPLOAD_KEY_PASSWORD=*****
+
+4 modifiar el archivo para el release 
+android/app/build.gradle
+https://facebook.github.io/react-native/docs/signed-apk-android
+
+5 Generating the release APK
+Run the following in a terminal:
+$ cd android
+$ ./gradlew bundleRelease
+
+En la documentación de React Native dice lo siguiente:
+
+“Gradle’s bundleRelease will bundle all the JavaScript needed to run your app into the AAB (Android App Bundle).”
+Lo cual significa que el “gradlew bundleRelease” no va generar un .APK, va generar un .ABB. Luego dice:
+
+“The generated AAB can be found under android/app/build/outputs/bundle/release/app.aab, and is ready to be uploaded to Google Play.”
+Este .ABB se va generar en la ruta sombreada y te indica que ya esta listo para subirlo a Google Play. Pero antes de hacerlo, te da unas indicaciones:
+
+“Before uploading the release build to the Play Store, make sure you test it thoroughly. First uninstall any previous version of the app you already have installed. Install it on the device using:
+$ react-native run-android --variant=release
+Note that --variant=release is only available if you’ve set up signing as described above.”
+Lo que te dice es que antes de subirlo a Google Play, debes de probar la aplicación. Para ello debes desinstalar cualquier versión anterior de la app y ejecutar el comando en negrita. NOTA, el flag “–variant=release” solo estará disponible si generaste el .ABB previamente.
+
+Si todo sale bien, se instalara la app de producción en tu celular y a la vez te generara el .APK en la siguiente ruta “android/app/build/outputs/apk/release/app.apk”.
+
+Espero haberte ayudado con tu consulta 😄.
+listo el apk lo encuentro en android/app/build/outputs/apk/

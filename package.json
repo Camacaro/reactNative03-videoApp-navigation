@@ -1,5 +1,5 @@
 {
-  "name": "platziVideoApp",
+  "name": "platzivideoapp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,11 +11,18 @@
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.7.1",
+    "@react-native-community/masked-view": "^0.1.6",
     "react": "16.9.0",
     "react-native": "0.61.5",
+    "react-native-gesture-handler": "^1.5.3",
+    "react-native-safe-area-context": "^0.6.4",
+    "react-native-screens": "^2.0.0-alpha.32",
     "react-native-vector-icons": "^6.6.0",
     "react-native-video": "^5.0.2",
     "react-native-webview": "^8.0.5",
+    "react-navigation": "^4.1.0",
+    "react-navigation-redux-helpers": "^4.0.1",
+    "react-navigation-stack": "^2.0.16",
     "react-redux": "^7.1.3",
     "redux": "^4.0.5",
     "redux-persist": "^6.0.0"

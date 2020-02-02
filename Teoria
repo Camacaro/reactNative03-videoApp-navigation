@@ -60,3 +60,10 @@ Si todo sale bien, se instalara la app de producción en tu celular y a la vez t
 
 Espero haberte ayudado con tu consulta 😄.
 listo el apk lo encuentro en android/app/build/outputs/apk/
+
+
+Instalando react navigation 
+$ npm install --save react-navigation
+$ npm install react-navigation-stack @react-native-community/masked-view
+$ npm install react-navigation-redux-helpers
+$ react-native link

@@ -19,6 +19,37 @@ pasar la app al telefono (apagar emulador), para debugger sacuri el telefono par
 $ react-native run-android
 
 
+createBottomTabNavigator(routeConfig, bottomTabNavigatorConfig)
+
+Configuración del bottomTabNavigatorConfig
+
+tabBarComponent
+tabBarPosition - top | bottom
+swipeEnabled
+animationsEnabled
+lazy
+removeClippedSubviews
+initialLayout
+tabBarOptions
+activeTintColor
+activeBackgroundColor
+inactiveTintColor
+inactiveBackgroundColor
+showLabel
+style
+labelStyle
+allowFontScaling
+navigationOptions en Tab Navigator
+
+Title
+tabBarIcon
+tabBarColor
+tabBarLavel
+tabBarAccessibilityLabel
+tabBarTestID
+tabBarOnPress
+
+
 
 firmar APK
 https://facebook.github.io/react-native/docs/signed-apk-android

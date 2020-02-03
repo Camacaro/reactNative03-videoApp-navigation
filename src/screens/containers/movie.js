@@ -13,6 +13,18 @@ class Movie extends Component {
     state = {
         opacity: new Animated.Value(0),
     }
+
+    // Editar la la vita a traves del metodo estatico de la navegacions
+    static navigationOptions = ({ navigation }) => {
+        
+        return {
+            headerTitle: () => (
+                <Header >
+                    <Close onPress = { () => navigation.goBack() } />
+                </Header>
+            )
+        }
+    };
     
     closeVideo = () => {
         this.props.dispatch({
@@ -43,9 +55,9 @@ class Movie extends Component {
             }}>
                 <MovieLayout >
 
-                    <Header >
+                    {/* <Header >
                         <Close onPress = { this.closeVideo } />
-                    </Header>
+                    </Header> */}
 
                     <Player />
 
@@ -57,7 +69,7 @@ class Movie extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    movie: state.selectedMovie
+    movie: state.videos.selectedMovie
 });
 
 export default connect( mapStateToProps )(Movie);

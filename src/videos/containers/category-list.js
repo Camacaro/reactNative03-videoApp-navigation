@@ -5,6 +5,7 @@ import Separator from '../../sections/components/horizontal-separator';
 import Layout from '../components/category-list-layout'
 import Category from '../components/category';
 import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
 
 
 // function mapStateToProps(state) {
@@ -19,9 +20,20 @@ class Categorylist extends Component {
   
     itemSeparator = () => <Separator />; // color='red' 
 
+    viewCategory = ( item ) => {
+        this.props.dispatch (
+            NavigationActions.navigate({
+                routeName: 'Category',
+                params: {
+                    genre: item.genres[0]
+                }
+            })
+        )
+    }
+
     renderItem = ( {item} ) => { 
 		return (
-			<Category {...item} />
+			<Category {...item} onPress = { () => { this.viewCategory(item) }  } />
 		)
 	}  	
      
@@ -54,7 +66,7 @@ class Categorylist extends Component {
 // };
 
 const mapStateToProps = (state) => ({
-    list: state.categoryList
+    list: state.videos.categoryList
 });
 
 //  connect( mapStateToProps )(Categorylist)

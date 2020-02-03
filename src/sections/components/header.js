@@ -12,7 +12,7 @@ import {
 function Header( props ) {
     return (
         <View>
-            <SafeAreaView>
+            <SafeAreaView style = {styles.statusBar}>
                 <View style={styles.container}>
                     
                     <Image 
@@ -38,15 +38,19 @@ const styles = StyleSheet.create({
     container: {
         paddingVertical: 10,
         paddingHorizontal: 10, // estos serian lo mismo que padding
-        // backgroundColor: 'red',
+        // backgroundColor: 'white',
         flexDirection: 'row' // react native usa lo que es flex y por default esta en vertical colunm
     },
     rigth: {
         // backgroundColor: 'green',
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-end',
+        // left: 250
 
+    },
+    statusBar: {
+        backgroundColor: 'white',
     }
 });
 

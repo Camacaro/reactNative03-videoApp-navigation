@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {FlatList, Text} from 'react-native';
-import Layout from '../components/suggestions-list-layout';
-import Empty from '../components/empty';
-import Separator from '../components/vertical-separator';
-import Suggestion from '../components/suggestions';
+import Layout from '../../videos/components/suggestions-list-layout';
+import Empty from '../../videos/components/empty';
+import Separator from '../../videos/components/vertical-separator';
+import Suggestion from '../../videos/components/suggestions';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
 
-class SuggestionList extends Component {
+class Category extends Component {
   	renderEmtpy = () => <Empty text="No hay sugerencias :(" />;
   
  	itemSeparator = () => <Separator />; // color='red' 
@@ -53,7 +53,7 @@ class SuggestionList extends Component {
 	// renderItem: es una funcion que devuelve cada item, es como un foreach
 
     return (
-      <Layout title="Recomendado para ti">
+      <Layout title={`${this.props.navigation.getParam('genre', 'Category')}`}>
         <FlatList
 			keyExtractor={this.keyExtractor}
 			// data={list}
@@ -70,7 +70,7 @@ class SuggestionList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    list: state.videos.suggestionList
+    list: state.videos.categoryList
 });
 
-export default connect( mapStateToProps )(SuggestionList);
+export default connect( mapStateToProps )(Category);
